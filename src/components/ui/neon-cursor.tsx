@@ -9,6 +9,7 @@ import '../css/NeonCursor.css';
 // For Next.js, add the `neoncursor.css` styles to your global CSS file (e.g., `globals.css`).
 
 const NeonCursor = () => {
+    const [isPointerMeetsRequirement, setIsPointerMeetsRequirement] = useState(false);
     const [position, setPosition] = useState({
         x: 0,
         y: 0,
@@ -19,6 +20,16 @@ const NeonCursor = () => {
     const [isHovering, setIsHovering] = useState(false);
     const trailControls = useAnimation();
     const glowControls = useAnimation();
+
+    useEffect(() => {
+        // Check if device has a precise pointer (mouse)
+        const mediaQuery = window.matchMedia('(pointer: fine)');
+        setIsPointerMeetsRequirement(mediaQuery.matches);
+
+        const handler = (e) => setIsPointerMeetsRequirement(e.matches);
+        mediaQuery.addEventListener('change', handler);
+        return () => mediaQuery.removeEventListener('change', handler);
+    }, []);
 
     const handleMouseMove = useCallback((e) => {
         setPosition((prev) => ({
@@ -64,6 +75,8 @@ const NeonCursor = () => {
     }, [trailControls, glowControls]);
 
     useEffect(() => {
+        if (!isPointerMeetsRequirement) return;
+
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mousedown', handleMouseDown);
         window.addEventListener('mouseup', handleMouseUp);
@@ -77,7 +90,9 @@ const NeonCursor = () => {
             window.removeEventListener('mouseover', handleMouseOver);
             window.removeEventListener('mouseout', handleMouseOut);
         };
-    }, [handleMouseMove, handleMouseOver, handleMouseOut]);
+    }, [isPointerMeetsRequirement, handleMouseMove, handleMouseOver, handleMouseOut]);
+
+    if (!isPointerMeetsRequirement) return null;
 
     return (
         <div className='neon-cursor-container'>
