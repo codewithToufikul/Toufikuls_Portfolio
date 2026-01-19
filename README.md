@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# Toufikul Islam - Full Stack Developer Portfolio
 
-## Project info
+Welcome to my professional portfolio! This project showcases my skills, experience, and the various projects I've built as a Full Stack / MERN Stack Developer. The portfolio is designed with a modern, glassmorphic aesthetic and is fully responsive across all devices.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Key Features
 
-## How can I edit this code?
+- **Modern UI/UX**: Built with a sleek glassmorphic design, smooth animations, and a professional look.
+- **Interactive Navigation**: Efficient tab-based navigation for About, Resume, Portfolio, and Contact sections.
+- **Mobile Optimized**: Custom responsive layout with a sticky mobile-friendly navigation bar.
+- **Project Showcase**: Detailed view of my top projects including technologies used and direct links to live sites and source code.
+- **Typewriter Effect**: Dynamic introduction using `react-simple-typewriter`.
+- **Contact Form**: Integrated contact section for professional inquiries.
 
-There are several ways of editing your application.
+## 🛠️ Technology Stack
 
-**Use Lovable**
+### Frontend
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Framework**: [React.js](https://reactjs.org/) (with TypeScript)
+- **Bundler**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: [shadcn/ui](https://ui.shadcn.com/) (based on Radix UI)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-Changes made via Lovable will be committed automatically to this repo.
+### Tools & Others
 
-**Use your preferred IDE**
+- **Package Manager**: npm / bun
+- **State Management**: React Context API / React Query
+- **Deployment**: Vercel / Netlify
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📁 Project Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+src/
+├── assets/          # Static assets like images and SVGs
+├── components/      # Reusable UI components
+│   ├── tabs/        # Individual content sections (About, Resume, etc.)
+│   └── ui/          # Basic UI elements (buttons, inputs, etc.)
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions and library wrappers
+├── pages/           # Main page components
+└── index.css        # Global styles and Tailwind directives
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Installation & Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To run this project locally, follow these steps:
 
-**Use GitHub Codespaces**
+1. **Clone the repository:**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+   ```bash
+   git clone https://github.com/codewithToufikul/Toufikuls_Portfolio.git
+   ```
 
-## What technologies are used for this project?
+2. **Navigate to the project directory:**
 
-This project is built with:
+   ```bash
+   cd Toufikuls_Portfolio
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Install dependencies:**
 
-## How can I deploy this project?
+   ```bash
+   npm install
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+   _(or `bun install` if you prefer)_
 
-## Can I connect a custom domain to my Lovable project?
+4. **Run the development server:**
 
-Yes, you can!
+   ```bash
+   npm run dev
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+5. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📧 Contact Me
+
+I'm always open to discussing new projects and creative ideas. Feel free to reach out!
+
+- **LinkedIn**: [Toufikul Islam](#)
+- **GitHub**: [@codewithToufikul](https://github.com/codewithToufikul)
+- **Email**: [imranmeg2356@gmail.com](mailto:imranmeg2356@gmail.com)
+- **Phone**: [+880 1709264924](tel:+8801709264924)
+
+---
+
+Designed and Built with ❤️ by **Toufikul Islam**
