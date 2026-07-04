@@ -73,7 +73,7 @@ const ProfileCard = () => {
         <a href="#" className="text-white/60 hover:text-primary transition-colors">
           <Twitter size={20} />
         </a>
-        <a href="https://toufikul-portfolio.web.app/" className="text-white/60 hover:text-primary transition-colors">
+        <a href="https://toufikuls-portfolio.vercel.app/" className="text-white/60 hover:text-primary transition-colors">
           <Globe size={20} />
         </a>
       </div>
