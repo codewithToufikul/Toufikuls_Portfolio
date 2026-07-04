@@ -64,16 +64,16 @@ const ProfileCard = () => {
 
       {/* Social Links Section */}
       <div className="flex justify-center gap-4 py-6 border-b border-white/5">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary transition-colors">
+        <a href="http://www.linkedin.com/in/toufikul-islamts" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary transition-colors">
           <Linkedin size={20} />
         </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary transition-colors">
+        <a href="https://github.com/codewithToufikul" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary transition-colors">
           <Github size={20} />
         </a>
         <a href="#" className="text-white/60 hover:text-primary transition-colors">
           <Twitter size={20} />
         </a>
-        <a href="#" className="text-white/60 hover:text-primary transition-colors">
+        <a href="https://toufikul-portfolio.web.app/" className="text-white/60 hover:text-primary transition-colors">
           <Globe size={20} />
         </a>
       </div>
@@ -81,7 +81,8 @@ const ProfileCard = () => {
       {/* CTA Buttons - Two Column Grid */}
       <div className="grid grid-cols-2 mt-auto">
         <a
-          href="#"
+          href="/resume.pdf"
+          download="Toufikul_Islam_Resume.pdf"
           className="flex flex-col items-center justify-center gap-2 py-6 border-r border-white/5 hover:bg-white/5 transition-all group"
         >
           <div className="p-2 rounded-full bg-white/5 text-white/40 group-hover:text-primary transition-colors">

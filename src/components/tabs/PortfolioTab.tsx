@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Globe } from "lucide-react";
+import { ExternalLink, Github, Globe, Play, Apple, Lock } from "lucide-react";
 
 interface Project {
   title: string;
@@ -6,16 +6,18 @@ interface Project {
   description: string;
   features: string[];
   technologies: string[];
-  liveLink: string;
+  liveLink?: string;
   clientCode: string;
   serverCode: string;
   gradient: string;
+  playStore?: string;
+  appStore?: string;
 }
 
 const projects: Project[] = [
   {
     title: "Fly-Book",
-    image: "https://i.ibb.co.com/LhDb30kd/Screenshot-2026-01-19-at-5-34-18-PM.jpg",
+    image: "https://i.ibb.co.com/gCG05TG/Screenshot-2026-01-19-at-5-34-18-PM-1-1.jpg",
     description:
       "A full-stack social learning platform with social networking, e-learning, marketplace, jobs, and community features.",
     features: [
@@ -36,11 +38,42 @@ const projects: Project[] = [
       "MongoDB",
     ],
     liveLink: "https://flybook.com.bd",
+    playStore: "https://play.google.com/store/search?q=flybook&c=apps",
+    appStore: "https://apps.apple.com/us/app/flybook-connect-people-nearby/id6761653161",
     clientCode: "https://github.com/codewithToufikul/fly-book-client",
     serverCode: "https://github.com/codewithToufikul/fly-book-server",
     gradient: "from-indigo-500 to-purple-600",
-  }
-  ,
+  },
+  {
+    title: "Fly-Connect",
+    image: "https://i.ibb.co.com/QFK9gnMv/Chat-GPT-Image-Jul-5-2026-12-11-43-AM-1-1-1-1.jpg",
+    description:
+      "A secure real-time messaging platform built for the Fly-Book ecosystem, featuring instant messaging, HD audio & video calls, media sharing, and end-to-end social communication.",
+    features: [
+      "Real-time one-to-one & group messaging",
+      "HD audio & video calling",
+      "Media, file & voice message sharing",
+      "Online status, typing indicators & read receipts",
+      "Push notifications with secure authentication",
+    ],
+    technologies: [
+      "React Native CLI",
+      "Firebase",
+      "Socket.io",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Agora.io",
+
+    ],
+    playStore:
+      "https://play.google.com/store/search?q=flyconnect&c=apps",
+    appStore:
+      "https://apps.apple.com/am/app/flyconnect-chat-call/id6761704543",
+    clientCode: "https://github.com/codewithToufikul/flyconnect-app",
+    serverCode: "https://github.com/codewithToufikul/flyconnect-server",
+    gradient: "from-cyan-500 to-blue-600",
+  },
   {
     title: "Service Pro",
     description:
@@ -62,7 +95,7 @@ const projects: Project[] = [
       "React Query",
       "Axios",
     ],
-    image: "https://i.ibb.co.com/ymR71cPr/Screenshot-2026-01-19-at-5-42-38-PM.jpg",
+    image: "https://i.ibb.co.com/7t2BjrcF/Screenshot-2026-01-19-at-5-42-38-PM-1.jpg",
     liveLink: "https://www.servicepro24x7.com/",
     clientCode: "https://github.com/codewithToufikul/service-pro-client",
     serverCode: "https://github.com/codewithToufikul/servies-pro-server",
@@ -86,7 +119,7 @@ const projects: Project[] = [
       "Context API",
       "Axios",
     ],
-    image: "https://i.ibb.co.com/3Y45XX7T/Screenshot-2026-01-19-at-5-48-03-PM.jpg",
+    image: "https://i.ibb.co.com/zW1YvxmB/Screenshot-2026-01-19-at-5-48-03-PM-1.jpg",
     liveLink: "https://hidayah-client.vercel.app/",
     clientCode: "https://github.com/codewithToufikul/hidayah-client",
     serverCode: "https://github.com/codewithToufikul/hidayah-server",
@@ -153,34 +186,80 @@ const PortfolioTab = () => {
 
                 {/* Links */}
                 <div className="flex flex-wrap gap-2">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-105"
-                    style={{ background: "var(--gradient-primary)" }}
-                  >
-                    <ExternalLink size={14} />
-                    Live Site
-                  </a>
-                  <a
-                    href={project.clientCode}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
-                  >
-                    <Github size={14} />
-                    Client
-                  </a>
-                  <a
-                    href={project.serverCode}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
-                  >
-                    <Github size={14} />
-                    Server
-                  </a>
+                  {project.liveLink && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-primary-foreground transition-all duration-300 hover:scale-105"
+                      style={{ background: "var(--gradient-primary)" }}
+                    >
+                      <ExternalLink size={14} />
+                      Live Site
+                    </a>
+                  )}
+
+                  {project.playStore && (
+                    <a
+                      href={project.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border border-primary/20 transition-all duration-300 hover:scale-105"
+                    >
+                      <Play size={14} className="fill-current" />
+                      Play Store
+                    </a>
+                  )}
+
+                  {project.appStore && (
+                    <a
+                      href={project.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border border-primary/20 transition-all duration-300 hover:scale-105"
+                    >
+                      <Apple size={14} />
+                      App Store
+                    </a>
+                  )}
+
+                  {project.clientCode && (
+                    project.clientCode === "Private" ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border/40 text-muted-foreground bg-muted/20 cursor-not-allowed opacity-70">
+                        <Lock size={12} />
+                        Client (Private)
+                      </span>
+                    ) : (
+                      <a
+                        href={project.clientCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
+                      >
+                        <Github size={14} />
+                        Client
+                      </a>
+                    )
+                  )}
+
+                  {project.serverCode && (
+                    project.serverCode === "Private" ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border/40 text-muted-foreground bg-muted/20 cursor-not-allowed opacity-70">
+                        <Lock size={12} />
+                        Server (Private)
+                      </span>
+                    ) : (
+                      <a
+                        href={project.serverCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
+                      >
+                        <Github size={14} />
+                        Server
+                      </a>
+                    )
+                  )}
                 </div>
               </div>
             </div>
